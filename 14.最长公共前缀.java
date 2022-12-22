@@ -14,6 +14,8 @@ class Solution {
         if(strs.length==1) return strs[0];
 
         for(int i = 1; i<strs.length;i++){
+
+            //get prefix in two string
             for(int j = 0;j<strs[i].length();j++){
                 if(result.charAt(j) != strs[i].charAt(j) && j == 0){
                     return "";
@@ -28,6 +30,16 @@ class Solution {
         }
         return result;
     }
+
+    public String getCommonPrefix(String s1, String s2){
+        String result = s1.length()<s2.length()? s1:s2;
+
+        
+
+        return result;
+    }
+
+
 }
 
 
