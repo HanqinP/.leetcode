@@ -14,29 +14,26 @@ class Solution {
         if(strs.length==1) return strs[0];
 
         for(int i = 1; i<strs.length;i++){
-
-            //get prefix in two string
-            for(int j = 0;j<strs[i].length();j++){
-                if(result.charAt(j) != strs[i].charAt(j) && j == 0){
-                    return "";
-                }else if(!result.contains(strs[i].substring(0, j+1))){
-                    result = strs[i].substring(0,j);
-                    break;
-                }
-
-                if(strs[i].length()==1) result = strs[i];
-
-            }
+            if(result=="") return "";
+            result = getCommonPrefix(result, strs[i]);
+            
         }
         return result;
     }
 
     public String getCommonPrefix(String s1, String s2){
-        String result = s1.length()<s2.length()? s1:s2;
+        
+        int len = s1.length()<s2.length()? s1.length():s2.length();
 
+        for(int i = 0;i<len;i++){
+            if(s1.charAt(i)!=s2.charAt(i) && i==0) return "";
+            if(s1.charAt(i)!=s2.charAt(i) && i!=0){
+                return s1.substring(0, i);
+            }
+        }
         
 
-        return result;
+        return s1.length()>s2.length()?s2:s1;
     }
 
 
