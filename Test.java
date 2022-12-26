@@ -1,9 +1,9 @@
 
 public class Test {
 
-    public static void main(String[] args){
-        //new S().isValid(new String ("()"));
-       
+    public static void main(String[] args) {
+        new S().plusOne(new int[] { 9, 9 });
+
     }
-    
+
 }
